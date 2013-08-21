@@ -1,0 +1,43 @@
+/*******************************************************************************
+ * _layout.scss
+ *
+ * Styling of the "simple" layout demonstrating the Compass grid extension Susy
+ * and building mobile first layouts.
+ ******************************************************************************/
+@import "singularitygs"
+
+// Singularity Variables
+
+$desktop: 980px
+$grids: 2
+$grids: add-grid(6 at 980px)
+$gutters: 10px
+$gutter-styles: 'fixed'
+$output: 'isolation'
+
+.l-page
+  //max-width: 990px
+  margin: 0 auto
+  +background-grid
+
+.l-header,
+.l-main,
+.l-footer  
+  margin: 0 auto
+  min-height: 100px
+  clear: both
+  margin-bottom: 10px  
+
+
+.l-content
+  min-height: 200px
+  +grid-span(1, 1)
+  +breakpoint($desktop) 
+    +grid-span(4, 1)
+
+
+.l-region--sidebar-first
+  +grid-span(1, 1)
+  +breakpoint($desktop) 
+    +grid-span(2, 4)
+
